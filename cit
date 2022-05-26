@@ -1,0 +1,36 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("ALVIN X CHELSEA", "Sentinel")
+
+
+local Tab = Window:NewTab("Player System")
+local Section = Tab:NewSection("Walkspeed")
+local Section = Tab:NewSection("Jump Power")
+Section:NewSlider("Walkspeed", "More Speed", 500, 100, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+Section:NewSlider("Jump Power", "More Jump", 500, 16, function(s) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+local Tab = Window:NewTab("Autofarm (soon)")
+
+
+end
+
+Section:NewDropdown("DropdownText", "DropdownInf", {"Option 1", "Option 2", "Option 3"}, function(currentOption)
+    print(currentOption)
+end)
+
+local oldList = {
+    "2019",
+    "2020"
+  }
+  local newList = {
+    "2021",
+    "2022"
+  }
+  local dropdown = Section:NewDropdown("Dropdown","Info", oldList, function()
+  
+  end)
+  Section:NewButton("Update Dropdown", "Refreshes Dropdown", function()
+    dropdown:Refresh(newList)
+  end)
